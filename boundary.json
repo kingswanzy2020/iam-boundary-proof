@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowReviewedOperationsOnly",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:ListUsers",
+                "iam:DeleteRole",
+                "iam:DeleteRolePermissionsBoundary",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:TagRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

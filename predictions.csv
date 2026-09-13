@@ -1,0 +1,9 @@
+Action,PredictedDecision
+"iam:DeleteRole","explicitDeny"
+"iam:DeleteRolePermissionsBoundary","explicitDeny"
+"iam:UpdateAssumeRolePolicy","explicitDeny"
+"iam:PutRolePolicy","explicitDeny"
+"iam:TagRole","explicitDeny"
+"iam:ListUsers","implicitDeny"
+"iam:CreatePolicyVersion","implicitDeny"
+"iam:GetRole","allowed"
