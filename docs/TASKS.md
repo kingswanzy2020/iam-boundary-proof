@@ -6,9 +6,9 @@
 - [ ] Design 8: write requirements, decisions, topology, plan, and source map
 - [ ] Design 8: use exactly three AI prompts
 - [ ] Design 8: freeze trust, boundary, widening, and eight predictions
-- [ ] Build 20: create exactly one policy and one role
-- [ ] Build 20: save the unbounded control as check 2
-- [ ] Build 20: compare implementation with frozen design
+- [o] Build 20: create exactly one policy and one role
+- [o] Build 20: save the unbounded control as check 2
+- [o] Build 20: compare implementation with frozen design
 - [ ] Validation 7: attach the boundary
 - [ ] Validation 7: save checks 3 through 6
 - [ ] Validation 7: calculate the exact prediction match count
