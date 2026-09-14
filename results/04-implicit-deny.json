@@ -1,0 +1,14 @@
+{
+    "EvaluationResults": [
+        {
+            "EvalActionName": "iam:ListUsers",
+            "EvalResourceName": "arn:aws:iam::111122223333:user/",
+            "EvalDecision": "implicitDeny",
+            "MatchedStatements": [],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        }
+    ]
+}

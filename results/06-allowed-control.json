@@ -1,0 +1,51 @@
+{
+    "EvaluationResults": [
+        {
+            "EvalActionName": "iam:GetRole",
+            "EvalResourceName": "arn:aws:iam::111122223333:role/BoundaryProofRole",
+            "EvalDecision": "allowed",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 41
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 130
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            },
+            "EvalDecisionDetails": {},
+            "ResourceSpecificResults": [
+                {
+                    "EvalResourceName": "arn:aws:iam::111122223333:role/BoundaryProofRole",
+                    "EvalResourceDecision": "allowed",
+                    "MatchedStatements": [
+                        {
+                            "SourcePolicyId": "PolicyInputList.1",
+                            "SourcePolicyType": "IAM Policy",
+                            "StartPosition": {
+                                "Line": 1,
+                                "Column": 41
+                            },
+                            "EndPosition": {
+                                "Line": 1,
+                                "Column": 130
+                            }
+                        }
+                    ],
+                    "PermissionsBoundaryDecisionDetail": {
+                        "AllowedByPermissionsBoundary": true
+                    }
+                }
+            ]
+        }
+    ]
+}

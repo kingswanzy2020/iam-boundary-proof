@@ -1,0 +1,119 @@
+{
+    "EvaluationResults": [
+        {
+            "EvalActionName": "iam:DeleteRole",
+            "EvalResourceName": "*",
+            "EvalDecision": "explicitDeny",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 237
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 444
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        },
+        {
+            "EvalActionName": "iam:DeleteRolePermissionsBoundary",
+            "EvalResourceName": "*",
+            "EvalDecision": "explicitDeny",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 237
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 444
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        },
+        {
+            "EvalActionName": "iam:UpdateAssumeRolePolicy",
+            "EvalResourceName": "*",
+            "EvalDecision": "explicitDeny",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 237
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 444
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        },
+        {
+            "EvalActionName": "iam:PutRolePolicy",
+            "EvalResourceName": "*",
+            "EvalDecision": "explicitDeny",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 237
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 444
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        },
+        {
+            "EvalActionName": "iam:TagRole",
+            "EvalResourceName": "*",
+            "EvalDecision": "explicitDeny",
+            "MatchedStatements": [
+                {
+                    "SourcePolicyId": "PolicyInputList.1",
+                    "SourcePolicyType": "IAM Policy",
+                    "StartPosition": {
+                        "Line": 1,
+                        "Column": 237
+                    },
+                    "EndPosition": {
+                        "Line": 1,
+                        "Column": 444
+                    }
+                }
+            ],
+            "MissingContextValues": [],
+            "PermissionsBoundaryDecisionDetail": {
+                "AllowedByPermissionsBoundary": true
+            }
+        }
+    ]
+}

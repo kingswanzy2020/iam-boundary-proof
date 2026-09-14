@@ -1,0 +1,9 @@
+Action,PredictedDecision,ActualDecision,Match,DecisionRule,BoundaryAllowed,ReturnedSourcePosition
+"iam:DeleteRole","explicitDeny","explicitDeny","yes","ExplicitDeny","true","1:237"
+"iam:DeleteRolePermissionsBoundary","explicitDeny","explicitDeny","yes","ExplicitDeny","true","1:237"
+"iam:UpdateAssumeRolePolicy","explicitDeny","explicitDeny","yes","ExplicitDeny","true","1:237"
+"iam:PutRolePolicy","explicitDeny","explicitDeny","yes","ExplicitDeny","true","1:237"
+"iam:TagRole","explicitDeny","explicitDeny","yes","ExplicitDeny","true","1:237"
+"iam:ListUsers","implicitDeny","implicitDeny","yes","ImplicitDeny","true","none"
+"iam:CreatePolicyVersion","implicitDeny","implicitDeny","yes","BoundaryDeny","false","none expected"
+"iam:GetRole","allowed","allowed","yes","AllowedPrincipal","true","1:41"

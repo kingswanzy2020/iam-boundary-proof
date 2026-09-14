@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IAM Boundary Decision Proof</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 1080px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            color: #172033;
+            background: #f3f6fa;
+        }
+
+        main {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 0.6rem;
+            text-align: left;
+        }
+
+        th {
+            background: #e2e8f0;
+        }
+
+        .score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #075985;
+        }
+
+        .limit {
+            border-left: 4px solid #b45309;
+            background: #fff7ed;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>IAM Boundary Decision Proof</h1>
+        <p>Audience: Security lead</p>
+        <p class="score">Simulator-confirmed predictions: 8/8</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Case</th>
+                    <th>Decision rule</th>
+                    <th>Actual result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Five privileged role mutations</td>
+                    <td>Matching explicit Deny</td>
+                    <td>explicitDeny</td>
+                </tr>
+                <tr>
+                    <td>iam:ListUsers</td>
+                    <td>No matching identity Allow</td>
+                    <td>implicitDeny</td>
+                </tr>
+                <tr>
+                    <td>iam:CreatePolicyVersion</td>
+                    <td>AllowedByPermissionsBoundary false</td>
+                    <td>implicitDeny</td>
+                </tr>
+                <tr>
+                    <td>iam:GetRole</td>
+                    <td>Identity Allow and boundary Allow</td>
+                    <td>allowed</td>
+                </tr>
+            </tbody>
+        </table>
+        <section class="limit">
+            <h2>Limits and tradeoffs</h2>
+            <p>The policy simulator does not make a live service request, and AWS states that results can differ from
+                the live environment.</p>
+            <p>No resource-based policy was supplied. No service control policy, cross-account trust, or separate human
+                console session was tested.</p>
+            <p>The proof trades those wider runtime questions for a reproducible, no-side-effect decision over the
+                policy inputs captured in this repository.</p>
+        </section>
+    </main>
+</body>
+
+</html>
