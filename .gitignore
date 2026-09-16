@@ -1,0 +1,9 @@
+# Credentials and local config — never commit
+.env
+.aws/
+*.pem
+*.key
+
+# Editor and OS noise
+.vscode/
+.DS_Store
