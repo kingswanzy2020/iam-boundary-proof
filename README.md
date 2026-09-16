@@ -34,13 +34,13 @@ The widening is only ever simulator input and is never attached to the role.
 | `readout.html` | Self-contained one-page readout for the security lead |
 | `docs/` | Requirements, decision records, topology, phase pins, source map, build record, after-action review, task list |
 
-## The six checks
+## Before and after, check by check
 
 | # | Evidence | Decision |
 |---|---|---|
 | 1 | `01-caller.json` | Administrative IAM user, not account root |
-| 2 | `02-baseline.json` | `iam:CreatePolicyVersion` **allowed** with no boundary. The risk is real |
-| 3 | `03-explicit-denies.json` | Five role mutations → `explicitDeny`, matched at `1:237` |
+| 2 | `02-baseline.json` | **Before:** `iam:CreatePolicyVersion` **allowed**. No boundary on the role, so the identity policy decides alone |
+| 3 | `03-explicit-denies.json` | **After:** five role mutations → `explicitDeny`, matched at `1:237` |
 | 4 | `04-implicit-deny.json` | `iam:ListUsers` → `implicitDeny` (inside the boundary, no identity allow) |
 | 5 | `05-boundary-deny.json` | `iam:CreatePolicyVersion` → `implicitDeny`, **`AllowedByPermissionsBoundary: false`** |
 | 6 | `06-allowed-control.json` | `iam:GetRole` → `allowed`, matched at `1:41` |
