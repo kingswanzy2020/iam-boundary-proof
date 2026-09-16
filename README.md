@@ -1,12 +1,18 @@
-# IAM Permissions Boundary Proof
+# IAM Permissions Boundary as a Role Ceiling
 
-An evidence package that answers one security-lead question with the AWS IAM policy simulator:
-**can a locally proposed policy widening grant `iam:CreatePolicyVersion` once an approved permissions
-boundary is attached?**
+`BoundaryProofCeiling`, a customer-managed policy, is set as the permissions boundary on
+`BoundaryProofRole`. That caps the role's maximum permissions, whatever identity policies it is given.
+The IAM policy simulator evaluates the same proposed identity policy (`widened.json`) against the
+role **before** and **after** the boundary is attached:
 
-It can't. Without the boundary, the simulator allows the widening. With the boundary attached, it returns
-`implicitDeny` with `AllowedByPermissionsBoundary: false`. Eight decisions were predicted and frozen
-before any IAM resource existed, and all **8 of 8** matched the simulator.
+| Action | Identity policy | Ceiling | No boundary | Boundary attached |
+|---|---|---|---|---|
+| `iam:CreatePolicyVersion` | Allow | — | **allowed** | **implicitDeny**, `AllowedByPermissionsBoundary: false` |
+| `iam:GetRole` | Allow | Allow | — | **allowed** |
+| 5 role mutations | Deny | Allow | — | **explicitDeny** (the ceiling can't override a Deny) |
+| `iam:ListUsers` | — | Allow | — | **implicitDeny** (the ceiling grants nothing on its own) |
+
+The widening is only ever simulator input and is never attached to the role.
 
 > AWS account IDs and IAM unique IDs are redacted to `111122223333`, `AIDACKCEVSQ6C2EXAMPLE`, and
 > `AROADBQP57FF2AEXAMPLE` throughout this repository and its history. The replacements have the
@@ -83,7 +89,7 @@ aws iam get-policy --policy-arn arn:aws:iam::<ACCOUNT_ID>:policy/BoundaryProofCe
 
 ## Write-up
 
-Full write-up — animated architecture diagram, the before/after boundary decision on
-`iam:CreatePolicyVersion`, and how explicit deny, implicit deny, and boundary refusal are told apart —
+Full write-up — animated architecture diagram, the before/after simulation of `iam:CreatePolicyVersion`,
+and how identity policy and ceiling combine for each case —
 lives in my portfolio repo:
 **[Projects / aws / iam-boundary-proof](https://github.com/kingswanzy2020/Projects/tree/main/aws/iam-boundary-proof)**.
